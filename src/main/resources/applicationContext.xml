@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.prowings.core.Student" name="std1" >
+	<bean class="com.prowings.core.Student" name="std1"  >
 		<property name="rollNumber">
 		<value>20</value>
 		</property>
@@ -15,6 +15,21 @@
 
 		<property name="address"> 
 		<value>Mumbai</value>
+		</property>
+		
+	</bean>
+
+	<bean class="com.prowings.core.Student" name="std2" >
+		<property name="rollNumber">
+		<value>10</value>
+		</property>
+		
+		<property name="name"> 
+		<value>Ram</value>
+		</property>
+
+		<property name="address"> 
+		<value>Ayodhya</value>
 		</property>
 		
 	</bean>
