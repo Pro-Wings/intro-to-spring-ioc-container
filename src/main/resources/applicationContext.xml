@@ -4,24 +4,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.prowings.core.Student" name="std1" scope = "prototype" >
-		<property name="rollNumber">
-		<value>20</value>
-		</property>
-		
-		<property name="name"> 
-		<value>Sham</value>
-		</property>
+	<!-- <bean class = "com.prowings.core.Car" name = "car1"> <constructor-arg 
+		value = "1998" type = "int" /> <constructor-arg value = "Honda" /> </bean> -->
 
-		<property name="address"> 
-		<value>Mumbai</value>
-		</property>
-		
+<!-- 	<bean class="com.prowings.core.Car" name="car1">
+		<constructor-arg value="Honda" index="1" />
+		<constructor-arg value="SportsCar" />
+	</bean>
+ -->
+
+ 	<bean class="com.prowings.core.Car" name="car1">
+ 		<property name="model" value ="2011" />
+ 		<property name="company" value ="Audi" />
+ 		<property name="engine" ref = "engine1" /> <!-- manual wiring -->
 	</bean>
 
-	<bean class="com.prowings.core.Person" name="p1" >
-		<constructor-arg value="Ram" index="1"/>
-		<constructor-arg value="10" index="0"/>
+	<bean class = "com.prowings.core.Engine" name = "engine1" >
+		<property name="type" value="V12" /> 
+		<property name="capacity" value="1.5" /> 
 	</bean>
-	
+
+
+
+<!--  
+	Incorrect argument types
+	<bean id="order" class="com.prowings.core.Order" name="order1">
+		<constructor-arg value="12345" /> Correct: String
+		<constructor-arg value="INVALID_DOUBLE" /> Incorrect: Should be a double
+	</bean>
+
+ -->
 </beans>
