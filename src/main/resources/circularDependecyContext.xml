@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.prowings.core.circulardependency.User"	name="user1" >
+		<constructor-arg ref="order1" />
+		<!-- <property name="order" ref = "order1" /> -->
+	</bean>
+	
+	<bean class="com.prowings.core.circulardependency.Order" name="order1" >
+ 		<constructor-arg ref="user1" />
+		<!-- <property name="user" ref = "user1" /> -->
+	</bean>
+
+</beans>

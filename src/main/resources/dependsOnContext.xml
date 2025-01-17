@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.prowings.core.circulardependency.C"	name="c1" >
+		<property name="id" value="30" />
+		<property name="name" value="Arun" />
+		<property name="subjectWiseMarks">
+			<map>
+				<entry key="Maths" value="89" />
+				<entry key="English" value="98" />
+				<entry key="Java" value="99" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="com.prowings.core.circulardependency.A"	name="a1" depends-on="b1, c1">
+		<property name="id" value="10" />
+		<property name="name" value="Ram" />
+		<property name="subjects">
+			<list>
+				<value>aaaa</value>
+				<value>bbbb</value>
+				<value>cccc</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="com.prowings.core.circulardependency.B"	name="b1" >
+		<property name="id" value="20" />
+		<property name="name" value="Sham" />
+		<property name="mobileNumbers">
+			<set>
+				<value>1234</value>
+				<value>2345</value>
+				<value>7865</value>
+				<value>1234</value>
+			</set>
+		</property>
+	</bean>
+
+
+	
+
+</beans>
