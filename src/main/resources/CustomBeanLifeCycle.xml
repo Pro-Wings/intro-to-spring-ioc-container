@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	<bean class="com.prowings.core.custombeanlifecycle.Shape" init-method="myCustomInit" destroy-method="myCustomDestroy" name="shape1">
+		<property name="length" value="10" />
+		<property name="width" value="30" />
+	</bean>
+ -->
+	<bean class="com.prowings.core.custombeanlifecycle.Rectangle" init-method="myCustomInit" destroy-method="myCustomDestroy"  name="shape2">
+		<property name="length" value="50" />
+		<property name="width" value="80" />
+	</bean>
+	
+</beans>
